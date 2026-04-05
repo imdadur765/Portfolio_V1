@@ -1,0 +1,202 @@
+/* =============================================
+   DESIGN SYSTEM — IMDADUR RAHMAN PORTFOLIO
+   AC-INSPIRED PREMIUM DARK THEME
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'AssassinsCreed';
+  src: url('/Assassin$.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Core Colors */
+  --bg-primary: #080808;
+  --bg-secondary: #111111;
+  --bg-card: rgba(255,255,255,0.03);
+  --bg-card-hover: rgba(255,255,255,0.06);
+
+  /* Accent Colors */
+  --ac-red: #c62828;
+  --ac-red-soft: rgba(198,40,40,0.15);
+  --ac-red-border: rgba(198,40,40,0.35);
+  --yellow: #FFD93D;
+  --blue: #4D96FF;
+  --green: #6BCB77;
+  
+  --accent-primary: var(--ac-red);
+  --accent-secondary: var(--yellow);
+
+  /* Text */
+  --text-primary: #f0f0f0;
+  --text-secondary: rgba(240,240,240,0.6);
+  --text-muted: rgba(240,240,240,0.35);
+  --muted: var(--text-muted);
+
+  /* Borders */
+  --border: rgba(255,255,255,0.07);
+  --border-accent: var(--ac-red-border);
+  --border-hover: rgba(198,40,40,0.5);
+
+  /* Typography */
+  --font-heading: 'AssassinsCreed', 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Spacing */
+  --section-py: 100px;
+  --container-max: 1200px;
+  --container-px: 24px;
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  --transition-slow: all 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── SCROLLBAR ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ac-red); }
+
+/* ─── UTILITIES ──────────────────────────────────────────────── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.section { padding: var(--section-py) 0; }
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ac-red);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-top: 16px;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #f0f0f0 30%, var(--ac-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── GLASS CARD ─────────────────────────────────────────────── */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: var(--transition);
+}
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ─── BUTTONS ────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--ac-red);
+  color: #fff;
+  box-shadow: 0 0 0 rgba(198,40,40,0);
+}
+.btn-primary:hover {
+  background: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(198,40,40,0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+.btn-outline:hover {
+  border-color: var(--ac-red);
+  color: var(--ac-red);
+  transform: translateY(-2px);
+}
+
+/* ─── NOISE TEXTURE ──────────────────────────────────────────── */
+.noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ─── FOCUS ──────────────────────────────────────────────────── */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--ac-red);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-px: 16px;
+    --section-py: 72px;
+  }
+}
